@@ -4,13 +4,11 @@ namespace SnakeGame {
    //Driver Class
    class Game{
 
-      // CreateBoard(){
-      //    for(int i = 0; i < 20; i ++){
-      //       for(int j = 0; i < 20; j++){
-      //          Console.Write("0");
-      //       }  
-      //    }
-      // }
+      // CreateBoard()
+      // UpdateBoard()
+      // DisplayBoard()
+      // bool Win()
+      // bool Lose()
 
       static void Main (string[] args){
          Console.WriteLine("Do you wish to play Snake? Type 'yes' to PLAY or 'no' to QUIT");
