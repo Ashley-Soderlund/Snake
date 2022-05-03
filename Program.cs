@@ -34,9 +34,7 @@ namespace SnakeGame {
       }
 
       //Also pass in snake location and fruit location once created!
-      static int[,] UpdateBoard(int[,] board, Fruit yum, OldFruit lessyum){
-         //insert snake location into board, head as 5 body as 6
-         //remove old locations if needed
+      static int[,] UpdateBoard(int[,] board, Fruit yum, OldFruit lessyum, Snake boi){
 
          //snake takes priority on board placement!
          
@@ -47,6 +45,9 @@ namespace SnakeGame {
                }
                else if ( j == lessyum.XaxisFruitOld && i == lessyum.YaxisFruitOld){
                   board[j,i] = 0;
+               }
+               else if (j == boi.XaxisSnake && i == boi.YaxisSnake){
+                  board[j,i] = 5;
                }
             }
          }
@@ -67,10 +68,10 @@ namespace SnakeGame {
                      Console.Write("*" + " ");
                   }
                   else if(board[j,i] == 5){
-                     Console.Write("o", " ");
+                     Console.Write("o" + " ");
                   }
                   else if(board[j,i] == 6){
-                     Console.WriteLine("O", " ");
+                     Console.WriteLine("O" + " ");
                   }
                   else{
                      Console.Write(" " + " ");
@@ -81,18 +82,17 @@ namespace SnakeGame {
             }
       }
 
-      public bool checkLose(bool loseValue){
-         //if(snakeHead hits board position of 1 or another part of snake body){
-            //loseValue = true;
-            //return loseValue;
-         //}
-         //else{
-            //return loseValue;
-         //}
-         return loseValue;
+      public static bool checkLose(bool loseValue, Snake boi){
+         if(boi.XaxisSnake == 0 || boi.YaxisSnake == 0 || boi.XaxisSnake == 19 || boi.YaxisSnake == 19){
+            loseValue = true;
+            return loseValue;
+         }
+         else{
+            return loseValue;
+         }
       }
 
-      public bool checkWin(bool winValue){
+      public static bool checkWin(bool winValue){
          //if(all 0 places in board are filled with snake){
             //winValue = true;
             //return winValue;
@@ -110,15 +110,18 @@ namespace SnakeGame {
          bool winValue = false;
          bool loseValue = false;
          
-         while (userPlay == "yes"){ //accept all case values
+         while (userPlay == "yes" || userPlay == "Yes" || userPlay == "YES"){ //accept all case values
             //Create Board and Snake & Fruit objects
             int[,] startboard = CreateBoard();
             Snake boi = new Snake(2);
             Fruit yum = new Fruit();
             OldFruit lessyum = new OldFruit();
+            ConsoleKeyInfo consoleKey;
+
+            int delayInMillisecs = 500;
 
             //Create first Board with snake and fruit
-            int[,] updatedboard = UpdateBoard(startboard, yum, lessyum);
+            int[,] updatedboard = UpdateBoard(startboard, yum, lessyum, boi);
 
             Console.WriteLine("                SNAKE                     ");
             Console.WriteLine("------------------------------------------");
@@ -132,35 +135,49 @@ namespace SnakeGame {
 
             //(checkWin(winValue) == false && checkLose(loseValue)==false)
             while(winValue == false && loseValue == false){ 
-               lessyum.UpdateOldFruit(lessyum, yum);
-               yum.UpdateFruit(yum);
-               updatedboard = UpdateBoard(updatedboard, yum, lessyum);
-               lessyum.UpdateOldFruit(lessyum, yum);
-               yum.UpdateFruit(yum);
-               PrintBoard(updatedboard);
-               updatedboard = UpdateBoard(updatedboard, yum, lessyum);
-               PrintBoard(updatedboard);
                //if(timer for 3 seconds)
                   //checkInput() if user provides input break
 
+
+               //See if key has been pressed
+               if(Console.KeyAvailable){
+                  consoleKey = Console.ReadKey(true);
+                  switch(consoleKey.Key){
+                     case ConsoleKey.UpArrow:
+                     boi.YSnakeUpdate(-1, boi);
+                     break;
+                     case ConsoleKey.DownArrow:
+                     boi.YSnakeUpdate(1, boi);
+                     break;
+                     case ConsoleKey.LeftArrow:
+                     boi.XSnakeUpdate(-1, boi);
+                     break;
+                     case ConsoleKey.RightArrow:
+                     boi.XSnakeUpdate(1, boi);
+                     break;
+                     case ConsoleKey.Escape:
+                        loseValue = true;
+                        break;
+                  }
+
+                  updatedboard = UpdateBoard(updatedboard, yum, lessyum, boi);
+                  //Console.Clear();
+                  PrintBoard(updatedboard);
+
+                  System.Threading.Thread.Sleep(delayInMillisecs);
+               }
                
                //check lose, win
+               loseValue = checkLose(loseValue, boi);
+               winValue = checkWin(winValue);
 
                //Check if fruit has been hit
-               //if(snakehead = fruitlocation){
-                  //lessyum.UpdateOldFruit(lessyum, yum);
-                  //yum.UpdateFruit(yum);
-                  //GrowSnake();
-               //}
+               if(boi.XaxisSnake == yum.XaxisFruit && boi.YaxisSnake == yum.YaxisFruit){
+                  lessyum.UpdateOldFruit(lessyum, yum);
+                  yum.UpdateFruit(yum);
+                  boi.SnakeGrow(boi);
+               }
 
-               //updateSnake based on userinput
-
-               //updatedboard = UpdateBoard(updatedboard, yum, lessyum);
-
-               //PrintBoard(updatedboard);
-      
-               Console.ReadKey();
-               loseValue = true;
             }
             Console.WriteLine("Do you wish to play Snake? Type 'yes' to PLAY or 'no' to QUIT");
             userPlay = Console.ReadLine();
