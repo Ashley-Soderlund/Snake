@@ -11,7 +11,7 @@ namespace SnakeGame {
       public Snake(int _snakeLegnth){
           snakeLegnth = _snakeLegnth;
           snakeXaxis = 10;
-          snakeXaxis = 10;
+          snakeYaxis = 10;
       }
 
       //accessors
@@ -34,13 +34,17 @@ namespace SnakeGame {
       }
 
       //UpdateSnake()
-      //SnakeGrow()
-      //Movement()?
-      
+      public void YSnakeUpdate(int value, Snake boi){
+         boi.YaxisSnake = boi.YaxisSnake + value;
+      }
+
+      public void XSnakeUpdate(int value, Snake boi){
+         boi.XaxisSnake = boi.XaxisSnake + value;
+      }
 
 
-      public void print(Snake snake){
-          Console.WriteLine("Snakes Legnth is " + snake.Size);
+      public void SnakeGrow(Snake boi){
+         boi.Size = boi.Size + 1;
       }
    }
 
