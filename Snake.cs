@@ -34,15 +34,18 @@ namespace SnakeGame {
       }
 
       //UpdateSnake()
+
+      //Update the Y position of the snake
       public void YSnakeUpdate(int value, Snake boi){
          boi.YaxisSnake = boi.YaxisSnake + value;
       }
 
+      //Update X position of the snake
       public void XSnakeUpdate(int value, Snake boi){
          boi.XaxisSnake = boi.XaxisSnake + value;
       }
 
-
+      //Keep track of the size of the snake
       public void SnakeGrow(Snake boi){
          boi.Size = boi.Size + 1;
       }
