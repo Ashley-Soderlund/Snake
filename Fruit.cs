@@ -4,10 +4,13 @@ namespace SnakeGame {
       private int fruitYaxis;
       private int fruitXaxis;
 
+      private int fruitCount;
+
 
       public Fruit(){
          fruitXaxis = 5;
          fruitYaxis = 5;
+         fruitCount = 0;
       }
 
       //Setters and Getters for Fruit Values
@@ -21,6 +24,12 @@ namespace SnakeGame {
       {
          get{return fruitYaxis;}
          set{fruitYaxis = value;}
+      }
+
+      public int FruitCount
+      {
+         get{return fruitCount;}
+         set{fruitCount = value;}
       }
 
       //Get a Random number from 1 to 18
@@ -38,6 +47,8 @@ namespace SnakeGame {
 
          yum.XaxisFruit = randomLocationX;
          yum.YaxisFruit = randomLocationY;
+
+         yum.fruitCount += 1;
       }
    }
 
