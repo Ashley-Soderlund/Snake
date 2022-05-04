@@ -1,5 +1,6 @@
 # INV S BL  SNAKE
 Ashley Soderlund, Computer Science Student
+*Programming && Debugging Still in Progress*
 
 > The starting goal of this repository was to code the computer game 'Snake' using C#. It has then changed for the time being to have a few different aspects that change the game to INV S BL  SNAKE (invisible snake). After a week of work and using a new language, this is my current version (though very buggy) of snake with a twist.
 
@@ -35,11 +36,18 @@ Ashley Soderlund, Computer Science Student
 ![image](https://user-images.githubusercontent.com/69334327/166722294-95078aa5-c417-426a-9436-df70a9dee94f.png)
 
 -**Make sure the Terminal has the Correct Path to Folder**
+Use cd <folder name> to update path
+ 
+![image](https://user-images.githubusercontent.com/69334327/166722818-5d12d567-1b72-4a0b-b078-35ef308e55bc.png)
+
 
 -**Run the Command: `dotnet run` in the terminal**
+ 
+ ![image](https://user-images.githubusercontent.com/69334327/166722966-94fa6410-b119-40f8-9c56-0756464cc666.png)
 
 
-## Program Eplaination
+
+## Program Explaination
 ### UML Class Diagram
 ![image](https://user-images.githubusercontent.com/69334327/166716266-3399e279-63b8-4a2d-b6e0-5c1d35c44ee4.png)
 
