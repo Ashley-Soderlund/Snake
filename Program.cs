@@ -6,6 +6,8 @@ namespace SnakeGame {
    //Driver Class
    class Game{
 
+
+      //Creation of starter board, 20x20
       public static int[,]CreateBoard(){
 
          int[,] board = new int[,] {
@@ -34,28 +36,35 @@ namespace SnakeGame {
 
       }
 
+      //Updates the characters of the snake, fruit, and board
       static int[,] UpdateBoard(int[,] board, Fruit yum, OldFruit lessyum, Snake boi, System.Collections.Generic.LinkedList<int> xSnakePositions, System.Collections.Generic.LinkedList<int> ySnakePositions){
          
+         //Cycles through every position on the board
          for(int i = 0; i < 20; i++){
             for(int j = 0; j < 20; j++){
+               //Add Fruit to the Board
                if(j == yum.XaxisFruit && i == yum.YaxisFruit){
                   board[j,i] = 2;
                }
+               //Remove Old Fruit from the Board
                else if ( j == lessyum.XaxisFruitOld && i == lessyum.YaxisFruitOld){
                   board[j,i] = 0;
                }
+               //Add Snake to the Board
                else if (j == boi.XaxisSnake && i == boi.YaxisSnake){
                   board[j,i] = 5;
                }
             }
          }
 
+         //Create a normal list from linked list values of the x poition of snake
          List<int> xSnakePos = new List<int>();
          foreach(int n in xSnakePositions)
          {
             xSnakePos.Add(n);
          }
 
+         //Create a normal list from the linked list values of the y position of the snake
          List<int> ySnakePos = new List<int>();
          foreach(int m in ySnakePositions)
          {
@@ -63,6 +72,7 @@ namespace SnakeGame {
          }
 
 
+         //Remove the tail characters from the snake so the snake will be its correct length
          for(int a = 0; xSnakePositions.Count > a; a++){
             if(a > boi.Size){
                if(board[xSnakePos[a], ySnakePos[a]] != 2){
@@ -76,19 +86,24 @@ namespace SnakeGame {
       }
 
 
+      //Display the board to the terminal
       static void PrintBoard(int[,] board){
          for(int i = 0; i < 20; i++){
                for(int j = 0; j < 20; j++){
+                  //Shows the boarder
                   if(board[j,i] == 1){
                      Console.Write("#" + " ");
                   }
+                  //Shows the fruit
                   else if(board[j,i] == 2){
 
                      Console.Write("*" + " ");
                   }
+                  //Shows the snake
                   else if(board[j,i] == 5){
                      Console.Write("o" + " ");
                   }
+                  //Shows empty space
                   else{
                      Console.Write(" " + " ");
                   }
@@ -98,6 +113,7 @@ namespace SnakeGame {
             }
       }
 
+      //Checks to see if snake has hit a wall and lost
       public static bool checkLose(bool loseValue, Snake boi, int [,] board){
          if(boi.XaxisSnake == 0 || boi.YaxisSnake == 0 || boi.XaxisSnake == 19 || boi.YaxisSnake == 19){
             loseValue = true;
@@ -125,6 +141,7 @@ namespace SnakeGame {
 
       }
 
+      //Checks to see if snake has gathered 10 fruits from the board
       public static bool checkWin(bool winValue, int[,] board, Fruit yum){
          int count = 0;
 
@@ -137,6 +154,7 @@ namespace SnakeGame {
 
          }
 
+         //Ignore first if statement, does not apply to program currently
          if(count == 40){
             winValue = true;
             Console.WriteLine("You Have WON! \n");
@@ -153,6 +171,8 @@ namespace SnakeGame {
       }
 
       static void Main (string[] args){
+         
+         //Ask
          Console.WriteLine("Do you wish to play Snake? Type 'yes' to PLAY or 'no' to QUIT");
          string userPlay = Console.ReadLine();
 
@@ -190,7 +210,7 @@ namespace SnakeGame {
 
             while(winValue == false && loseValue == false){ 
 
-               //See if key has been pressed, add timer?
+               //See if key has been pressed
                if(Console.KeyAvailable){
                   consoleKey = Console.ReadKey(true);
                   switch(consoleKey.Key){
