@@ -38,7 +38,7 @@ Ashley Soderlund, Computer Science Student
  
 ![image](https://user-images.githubusercontent.com/69334327/166722294-95078aa5-c417-426a-9436-df70a9dee94f.png)
 
--**Make sure the Terminal has the Correct Path to Folder**
+-**Make sure the Terminal has the Correct Path to Folder and that the Folder with the Code is a .NET Project**
 Use cd <folder name> to update path
  
 ![image](https://user-images.githubusercontent.com/69334327/166722818-5d12d567-1b72-4a0b-b078-35ef308e55bc.png)
