@@ -179,10 +179,10 @@ namespace SnakeGame {
             //Create first Board with snake and fruit
             int[,] updatedboard = UpdateBoard(startboard, yum, lessyum, boi, xSnakePositions, ySnakePositions);
 
-            Console.WriteLine("                SNAKE                     ");
+            Console.WriteLine("              INV S BL  SNAKE             ");
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("Instructions: Using the Up, Down, Left, and Right" +"\n" + "Arrow Keys, Collect 10 '*' to Win the Game of Snake");
-            Console.WriteLine("Be sure to not run into anything!");
+            Console.WriteLine("Be sure to not run into the all and keep track of your snake!" + "\n");
             Console.WriteLine("PRESS ANY KEY TO GET STARTED!");
             Console.ReadKey();
 
