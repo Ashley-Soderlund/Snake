@@ -13,12 +13,9 @@ Ashley Soderlund, Computer Science Student
 -.NET Core, Version: 6.0.4
 -GitHub
 
-## Running Program
+## Running the Program in VSCode
 -Pull all files from Repository into Same Folder on Personal Device
 ![image](https://user-images.githubusercontent.com/69334327/166720002-a7c824af-2192-439d-b93e-4febd547b44a.png)
-
-
-### VSCode
 
 -**Make sure  Visual Studio Code is Installed**
  Link to Install VSCode: https://code.visualstudio.com/download
@@ -52,10 +49,14 @@ Use cd <folder name> to update path
  ![image](https://user-images.githubusercontent.com/69334327/166722966-94fa6410-b119-40f8-9c56-0756464cc666.png)
  
 
- ### Command Prompt
+ ### Running the Program in Device Command Prompt
  Instead of being run in VSCode, you can also run in a normal command prompt.
  
+ -Pull all files from Repository into Same Folder on Personal Device
+ ![image](https://user-images.githubusercontent.com/69334327/166720002-a7c824af-2192-439d-b93e-4febd547b44a.png)
+ 
  -**Take Folder with Pulled Files and Save to Easy Location**
+ 
  -**Make sure .NET Core is Installed**
  This is done in your command prompt for your device. Type `dotnet` to see if application is installed and `dotnet --info` for more information. 
  Link to Install .NET Core: https://dotnet.microsoft.com/en-us/download 
