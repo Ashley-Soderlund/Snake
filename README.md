@@ -17,6 +17,9 @@ Ashley Soderlund, Computer Science Student
 -Pull all files from Repository into Same Folder on Personal Device
 ![image](https://user-images.githubusercontent.com/69334327/166720002-a7c824af-2192-439d-b93e-4febd547b44a.png)
 
+
+### VSCode
+
 -**Make sure  Visual Studio Code is Installed**
  Link to Install VSCode: https://code.visualstudio.com/download
  
@@ -38,7 +41,7 @@ Ashley Soderlund, Computer Science Student
  
 ![image](https://user-images.githubusercontent.com/69334327/166722294-95078aa5-c417-426a-9436-df70a9dee94f.png)
 
--**Make sure the Terminal has the Correct Path to Folder and that the Folder with the Code is a .NET Project**
+-**Make sure the Terminal has the Correct Path to Folder**
 Use cd <folder name> to update path
  
 ![image](https://user-images.githubusercontent.com/69334327/166722818-5d12d567-1b72-4a0b-b078-35ef308e55bc.png)
@@ -47,6 +50,23 @@ Use cd <folder name> to update path
 -**Run the Command: `dotnet run` in the terminal**
  
  ![image](https://user-images.githubusercontent.com/69334327/166722966-94fa6410-b119-40f8-9c56-0756464cc666.png)
+ 
+
+ ### Command Prompt
+ Instead of being run in VSCode, you can also run in a normal command prompt.
+ 
+ -**Take Folder with Pulled Files and Save to Easy Location**
+ -**Make sure .NET Core is Installed**
+ This is done in your command prompt for your device. Type `dotnet` to see if application is installed and `dotnet --info` for more information. 
+ Link to Install .NET Core: https://dotnet.microsoft.com/en-us/download 
+ 
+ ![image](https://user-images.githubusercontent.com/69334327/166721367-0cafcb87-1fa5-4d69-9a02-08499f2a7f9f.png)
+ 
+ -**Have path set to Folder Location**
+ 
+ ![image](https://user-images.githubusercontent.com/69334327/166726022-159d6f11-ce7f-4818-889c-7d3c4f454059.png)
+
+ -**Run the Command: `dotnet run` in the command prompt**
 
 
 
