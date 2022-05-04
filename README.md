@@ -1,11 +1,14 @@
 # INV S BL  SNAKE
 Ashley Soderlund, Computer Science Student
+
+
 *Programming && Debugging Still in Progress*
 
 > The starting goal of this repository was to code the computer game 'Snake' using C#. It has then changed for the time being to have a few different aspects that change the game to INV S BL  SNAKE (invisible snake). After a week of work and using a new language, this is my current version (though very buggy) of snake with a twist.
 
 
 ## Project Creation
+-Microsoft Surface
 -Visual Studio Code, Version: 1.64
 -.NET Core, Version: 6.0.4
 -GitHub
