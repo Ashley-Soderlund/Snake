@@ -10,7 +10,33 @@ Ashley Soderlund, Computer Science Student
 -GitHub
 
 ## Running Program
--Pull all files
+-Pull all files from Repository into Same Folder on Personal Device
+![image](https://user-images.githubusercontent.com/69334327/166720002-a7c824af-2192-439d-b93e-4febd547b44a.png)
+
+-**Make sure  Visual Studio Code is Installed**
+ Link to Install VSCode: https://code.visualstudio.com/download
+ 
+-**Make sure C# extension to VSCode is Installed**
+ If there is still a blue `Install` button in the right hand corner of the extension, click on the extension and install to VSCode.
+ 
+![image](https://user-images.githubusercontent.com/69334327/166720542-e6d87a2b-ca65-41f0-8cc6-e10a1c794414.png)
+
+-**Make sure .NET Core is Installed**
+ This is done in your command prompt for your device. Type `dotnet` to see if application is installed and `dotnet --info` for more information. 
+ Link to Install .NET Core: https://dotnet.microsoft.com/en-us/download 
+ 
+ ![image](https://user-images.githubusercontent.com/69334327/166721367-0cafcb87-1fa5-4d69-9a02-08499f2a7f9f.png)
+
+-**Add folder into Visual Studio Code Workspace**
+
+-**Ensure .NET Core is used for Compilation** 
+ Can be done by opening new terminal with .NET or running .NET with terminal command.
+ 
+![image](https://user-images.githubusercontent.com/69334327/166722294-95078aa5-c417-426a-9436-df70a9dee94f.png)
+
+-**Make sure the Terminal has the Correct Path to Folder**
+
+-**Run the Command: `dotnet run` in the terminal**
 
 
 ## Program Eplaination
