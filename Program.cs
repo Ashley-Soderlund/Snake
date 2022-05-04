@@ -98,18 +98,34 @@ namespace SnakeGame {
             }
       }
 
-      public static bool checkLose(bool loseValue, Snake boi){
+      public static bool checkLose(bool loseValue, Snake boi, int [,] board){
          if(boi.XaxisSnake == 0 || boi.YaxisSnake == 0 || boi.XaxisSnake == 19 || boi.YaxisSnake == 19){
             loseValue = true;
             Console.WriteLine("Sorry, You Have Lost \n");
             return loseValue;
          }
          else{
+
+            // for(int i = 0; i < 20; i++){
+            //    for(int j = 0; j < 20; j++){
+            //       if(board[j,i] == 5){
+            //          if(boi.XaxisSnake != && boi.YaxisSnake != i){
+            //             loseValue = true;
+            //             Console.WriteLine("Sorry, You Have Lost \n");
+            //             return loseValue;
+            //          }
+            //       }
+            //    }
+            // }
+
             return loseValue;
          }
+
+
+
       }
 
-      public static bool checkWin(bool winValue, int[,] board){
+      public static bool checkWin(bool winValue, int[,] board, Fruit yum){
          int count = 0;
 
          for(int i = 0; i < 20; i++){
@@ -122,6 +138,11 @@ namespace SnakeGame {
          }
 
          if(count == 40){
+            winValue = true;
+            Console.WriteLine("You Have WON! \n");
+            return winValue;
+         }
+         else if (yum.FruitCount == 10){
             winValue = true;
             Console.WriteLine("You Have WON! \n");
             return winValue;
@@ -160,7 +181,8 @@ namespace SnakeGame {
 
             Console.WriteLine("                SNAKE                     ");
             Console.WriteLine("------------------------------------------");
-            Console.WriteLine("Instructions:                             " +"\n");
+            Console.WriteLine("Instructions: Using the Up, Down, Left, and Right" +"\n" + "Arrow Keys, Collect 10 '*' to Win the Game of Snake");
+            Console.WriteLine("Be sure to not run into anything!");
             Console.WriteLine("PRESS ANY KEY TO GET STARTED!");
             Console.ReadKey();
 
@@ -200,8 +222,8 @@ namespace SnakeGame {
                }
                
                //Check if player has lost or won
-               loseValue = checkLose(loseValue, boi);
-               winValue = checkWin(winValue, updatedboard);
+               loseValue = checkLose(loseValue, boi, updatedboard);
+               winValue = checkWin(winValue, updatedboard, yum);
 
                //Check if fruit has been hit
                if(boi.XaxisSnake == yum.XaxisFruit && boi.YaxisSnake == yum.YaxisFruit){
@@ -211,8 +233,8 @@ namespace SnakeGame {
                }
 
             }
-            Console.WriteLine("Do you wish to play Snake? Type 'yes' to PLAY or 'no' to QUIT");
-            userPlay = Console.ReadLine();
+            Console.WriteLine("Thanks for Playing! Fruits Collected: " + yum.FruitCount);
+            userPlay = "no";
          }
       }
    }
