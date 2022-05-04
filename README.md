@@ -9,8 +9,11 @@ Ashley Soderlund, Computer Science Student
 
 ## Project Creation
 -Microsoft Surface
+
 -Visual Studio Code, Version: 1.64
+
 -.NET Core, Version: 6.0.4
+
 -GitHub
 
 ## Running the Program in VSCode
@@ -49,7 +52,7 @@ Use cd <folder name> to update path
  ![image](https://user-images.githubusercontent.com/69334327/166722966-94fa6410-b119-40f8-9c56-0756464cc666.png)
  
 
- ### Running the Program in Device Command Prompt
+ ## Running the Program in Device Command Prompt
  Instead of being run in VSCode, you can also run in a normal command prompt.
  
  -Pull all files from Repository into Same Folder on Personal Device
